@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todo projet operationnel </title>
+    <link rel="stylesheet" th:href="@{/css/app.css}" />
+</head>
+<body>
+<main class="page">
+    <header class="hero">
+        <div class="hero-left">
+            <p class="eyebrow">Todo Atelier</p>
+            <h1>Des tâches nettes, une journée fluide.</h1>
+            <p class="subtitle">Un espace clair pour créer, suivre et terminer ce qui compte.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" type="button" id="jump-to-form">Créer une tâche</button>
+                <span class="hero-note">Gérer votre liste de tâches.</span>
+            </div>
+        </div>
+        <div class="hero-card">
+            <p class="card-title">Rythme du jour</p>
+            <p class="card-value">Focus</p>
+            <p class="card-meta">Commence petit, termine fort.</p>
+        </div>
+    </header>
+
+    <section class="panel">
+        <form id="task-form" class="form">
+            <div class="field">
+                <label for="title">Titre</label>
+                <input id="title" name="title" type="text" required maxlength="120" />
+            </div>
+            <div class="field">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Ajouter</button>
+        </form>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Mes tâches</h2>
+            <button id="refresh" class="btn-ghost" type="button">Rafraîchir</button>
+        </div>
+        <ul id="task-list" class="task-list"></ul>
+        <p id="empty-state" class="empty-state">Aucune tâche pour le moment.</p>
+    </section>
+</main>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>
